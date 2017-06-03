@@ -8,7 +8,8 @@ function usage
 }
 
 VERBOSE=0
-
+TOKEN="insert Token"
+CHATID=insert chat id
 while getopts ":c:t:i:p:m:v" opt; do
     case "$opt" in
         c) CONFIGFILE=$OPTARG ;;
@@ -22,13 +23,13 @@ while getopts ":c:t:i:p:m:v" opt; do
 done
 
 # Test config file
-if [ -n "$CONFIGFILE" -a ! -f "$CONFIGFILE" ]; then echo "Configfile not found: $CONFIGFILE"; usage; fi
+#if [ -n "$CONFIGFILE" -a ! -f "$CONFIGFILE" ]; then echo "Configfile not found: $CONFIGFILE"; usage; fi
 
 # Check config file if given
-if [ -n "$CONFIGFILE" ]; then . "$CONFIGFILE";
+#if [ -n "$CONFIGFILE" ]; then . "$CONFIGFILE";
 # Default config file ~/.telegramrc if it exists
-elif [ -f /etc/telegramrc ]; then . /etc/telegramrc;
-fi
+#elif [ -f /etc/telegramrc ]; then . /etc/telegramrc;
+#fi
 
 # If TOKEN or CHATID were given in the commandline, then override that in the configfile
 if [ -n "$TOKEN_ARG" ]; then TOKEN=$TOKEN_ARG; fi
