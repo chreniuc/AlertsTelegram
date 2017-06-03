@@ -59,8 +59,14 @@ In this example the **Chat ID** to look out for is **22031984**. Replace `{TOKEN
 Clone this repo or download the zipped file. 
 
 ```console
-# git clone https://github.com/kznamst/AlertsTelegram.git 
+# git clone https://github.com/kznamst/AlertsTelegram.git
 # cd AlertsTelegram
+# chmod +x cron.sh 
+# chmod +x sendtelegram.sh
+# env > ~/.env
+# crontab -e
+In cron add: 
+55 * * * * /home/storj/AlertsTelegram/cron.sh >> /dev/null 2>&1
 ```
 `
 
