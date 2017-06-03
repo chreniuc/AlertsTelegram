@@ -59,8 +59,8 @@ In this example the **Chat ID** to look out for is **22031984**. Replace `{TOKEN
 Clone this repo or download the zipped file. 
 
 ```console
-# git clone https://github.com/matriphe/monit2telegram.git 
-# cd monit2telegram
+# git clone https://github.com/kznamst/AlertsTelegram.git 
+# cd AlertsTelegram
 ```
 `
 
