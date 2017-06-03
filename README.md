@@ -1,19 +1,12 @@
-# monit2telegram
-A simple script to send Monit alerts using Telegram bot.
-
-By default, Monit only sends alert notifications via email. But we can also set [a hook to execute a script](https://mmonit.com/monit/documentation/monit.html#action). When executing the script, Monit sets a few environment variables about the alert.
-
-This tiny script transforms those variables into a text message and pipes them to Telegram using a bash script for delivery.
-
-This script is inspired by [Monit2Twilio](https://github.com/alexdunae/monit2twilio).
+# AlertsTelegram
+A simple script to send alerts using Telegram bot.
 
 ## Requirements
 
 * Bash
 * CURL
-* [jq](https://stedolan.github.io/jq/)
 * Telegram Bot
-* Monit
+
 
 ## Create Telegram Bot
 
@@ -33,8 +26,8 @@ To send messages to a Telegram chat, you must first needs to start a chat with t
 
 To get the **Chat ID** from Telegram bot, execute this command using [getUpdates](https://core.telegram.org/bots/api#getupdates) function of Telegram API.
 
-```console
-$ curl --silent "https://api.telegram.org/bot{TOKEN}/getUpdates" | jq
+```
+Go to "https://api.telegram.org/bot{TOKEN}/getUpdates" : 
 {
   "ok": true,
   "result": [
@@ -69,21 +62,7 @@ Clone this repo or download the zipped file.
 # git clone https://github.com/matriphe/monit2telegram.git 
 # cd monit2telegram
 ```
-
-Put your Telegram Bot ID and Chat ID in `telegramrc` and save it to the `/etc`  directory (`/etc/telegramrc`).
-
-```console
-# cp telegramrc /etc/telegramrc
-```
-
-Put `sendtelegram.sh` and `monit2telegram.sh` to `/usr/local/bin` and make them executable.
-
-```console
-# cp sendtelegram.sh /usr/local/bin/sendtelegram
-# chmod +x /usr/local/bin/sendtelegram
-# cp monit2telegram.sh /usr/local/bin/monit2telegram
-# chmod +x /usr/local/bin/monit2telegram
-```
+`
 
 Test the `sendtelegram` script by running this command.
 
@@ -94,12 +73,3 @@ Done!
 #
 ```
 You should see Telegram message sent by your Telegram bot.
-
-## Set Up Monit
-
-Now you can add Monit alert by adding this line to Monit configuration file.
-
-```nginx
-check file nginx.pid with path /var/run/nginx.pid
-    if changed pid then exec "/usr/local/bin/monit2telegram"
-```
