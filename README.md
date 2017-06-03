@@ -67,7 +67,7 @@ Clone this repo or download the zipped file.
 Test the `sendtelegram` script by running this command.
 
 ```console
-# sendtelegram -c /etc/telegramrc -m "Hello from the other side!"
+# sendtelegram -m "Hello from the other side!"
 Sending message 'Hello from the other side!' to 22031984
 Done!
 #
