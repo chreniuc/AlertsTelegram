@@ -68,7 +68,7 @@ Clone this repo or download the zipped file.
 # crontab -e
 In cron add: 
 55 * * * * /home/storj/AlertsTelegram/cron.sh >> /dev/null 2>&1
-#That means that it will be executed every hour at x:55
+#That means that it will be executed every hour at x:55, don't forget to change the path: /path/to/AlertsTelegram/cron.sh
 ```
 
 ## Cron.sh
