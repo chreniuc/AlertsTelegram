@@ -1,5 +1,5 @@
 # AlertsTelegram
-A simple script to send alerts using Telegram bot.
+A simple script to send alerts from StorjShare using Telegram bot.
 
 ## Requirements
 
