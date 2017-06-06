@@ -1,4 +1,4 @@
-# AlertsTelegram
+# AlertsTelegram from StorjShare
 A simple script to send alerts from StorjShare using Telegram bot.
 
 ## Requirements
@@ -6,7 +6,8 @@ A simple script to send alerts from StorjShare using Telegram bot.
 * Bash
 * CURL
 * Telegram Bot
-
+## Output Demo
+![Demo](http://i.imgur.com/CqqUvrd.jpg)
 
 ## Create Telegram Bot
 
