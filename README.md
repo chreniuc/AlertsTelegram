@@ -68,12 +68,14 @@ Clone this repo or download the zipped file.
 # crontab -e
 In cron add: 
 55 * * * * /home/storj/AlertsTelegram/cron.sh >> /dev/null 2>&1
+#That means that it will be executed every hour at x:55
 ```
+
 ## Cron.sh
 Here we parse the data from the `storjshare status` command and we get only the *%* and the space used.
-Output will look something like this: `Vps : hostname (%) xGB`
+Output will look something like this: ` Vps : hostname (%) xGB `
 
-`
+
 Test the `sendtelegram` script by running this command.
 
 ```console
