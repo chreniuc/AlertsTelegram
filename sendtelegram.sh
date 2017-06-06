@@ -22,15 +22,6 @@ while getopts ":c:t:i:p:m:v" opt; do
     esac
 done
 
-# Test config file
-#if [ -n "$CONFIGFILE" -a ! -f "$CONFIGFILE" ]; then echo "Configfile not found: $CONFIGFILE"; usage; fi
-
-# Check config file if given
-#if [ -n "$CONFIGFILE" ]; then . "$CONFIGFILE";
-# Default config file ~/.telegramrc if it exists
-#elif [ -f /etc/telegramrc ]; then . /etc/telegramrc;
-#fi
-
 # If TOKEN or CHATID were given in the commandline, then override that in the configfile
 if [ -n "$TOKEN_ARG" ]; then TOKEN=$TOKEN_ARG; fi
 if [ -n "$CHATID_ARG" ]; then CHATID=$CHATID_ARG; fi
