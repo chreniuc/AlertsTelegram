@@ -7,7 +7,7 @@ A simple script to send alerts from StorjShare using Telegram bot.
 * CURL
 * Telegram Bot
 ## Output Demo
-![Demo](http://i.imgur.com/CqqUvrd.jpg)
+<img src="http://i.imgur.com/CqqUvrd.jpg" height="400"  >
 
 ## Create Telegram Bot
 
@@ -69,8 +69,11 @@ Clone this repo or download the zipped file.
 In cron add: 
 55 * * * * /home/storj/AlertsTelegram/cron.sh >> /dev/null 2>&1
 ```
-`
+## Cron.sh
+Here we parse the data from the `storjshare status` command and we get only the *%* and the space used.
+Output will look something like this: `Vps : hostname (%) xGB`
 
+`
 Test the `sendtelegram` script by running this command.
 
 ```console
