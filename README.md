@@ -60,16 +60,17 @@ In this example the **Chat ID** to look out for is **22031984**. Replace `{TOKEN
 Clone this repo or download the zipped file. 
 
 ```console
-# git clone https://github.com/kznamst/AlertsTelegram.git
-# cd AlertsTelegram
-# chmod +x cron.sh 
-# chmod +x sendtelegram.sh
-# env > ~/.env
-# crontab -e
-In cron add: 
+git clone https://github.com/kznamst/AlertsTelegram.git
+cd AlertsTelegram
+chmod +x cron.sh 
+chmod +x sendtelegram.sh
+env > ~/.env
+crontab -e
+# In cron add: 
 55 * * * * /home/storj/AlertsTelegram/cron.sh >> /dev/null 2>&1
-#That means that it will be executed every hour at x:55, don't forget to change the path: /path/to/AlertsTelegram/cron.sh
+# That means that it will be executed every hour at x:55, don't forget to change the path: /path/to/AlertsTelegram/cron.sh
 ```
+Note: Change `TOKEN="insert Token" CHATID=insert chat id` in sendtelegram.sh, and change the path in `cron.sh`
 
 ## Cron.sh
 Here we parse the data from the `storjshare status` command and we get only the *%* and the space used.
